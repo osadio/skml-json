@@ -22,7 +22,7 @@ def serialize_linear_regressor(model):
 
 
 def deserialize_linear_regressor(model_dict):
-    model = LinearRegression(model_dict['params'])
+    model = LinearRegression(**model_dict['params'])
 
     model.coef_ = np.array(model_dict['coef_'])
     model.intercept_ = np.array(model_dict['intercept_'])
